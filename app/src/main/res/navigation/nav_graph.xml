@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chatFragment">
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.talktopus.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.talktopus.ui.contacts.ContactsFragment"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_contactsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.talktopus.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
